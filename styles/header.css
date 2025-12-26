@@ -1,0 +1,78 @@
+/* styles/header.css (corrigido para usar variáveis e manter alinhamento) */
+
+.site-header { z-index: 10; position: relative; width: 100%; }
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* importante para alinhamento */
+  gap: var(--gap);
+  padding: 18px var(--container-padding);
+}
+
+/* logo */
+.brand { display:inline-block; }
+.logo { width: var(--logo-size); height: auto; display:block; }
+
+/* menu toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: calc(var(--logo-size) / 2.8);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* navigation */
+.navigation { margin-left: var(--gap); }
+.navigation ul {
+  display:flex;
+  gap: calc(var(--gap) * 1.3);
+  list-style: none;
+  align-items:center;
+  margin:0;
+  padding:0;
+}
+.navigation__link {
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-size: clamp(13px, 0.9vw, 15px);
+  position: relative;
+  text-decoration: none; /* Adicione esta linha para remover o sublinhado padrão */
+}
+.navigation__link::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 100%; height: 3px;
+  background: var(--orange);
+  transform: scaleX(0); transform-origin: right;
+  transition: transform .28s;
+}
+.navigation__link:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* header small social */
+.navigation__social { margin-left: auto; display:flex; align-items:center; gap: calc(var(--gap) / 1.5); }
+.header-icon { width: clamp(20px, 1.6vw, 28px); height: auto; opacity:0.85; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .navigation {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 8px); /* sempre abaixo do header */
+    display: none;
+    background: rgba(0,0,0,0.6);
+    padding: 12px 0;
+    border-radius: 0 0 10px 10px;
+  }
+  .navigation.active { display:block; }
+  .navigation ul { flex-direction: column; gap: calc(var(--gap) / 2); padding: 8px var(--container-padding); }
+  .navigation__link { display:block; padding: 8px 12px; width:100%; text-align:center; font-size: 15px; }
+  .navigation__social { display:none; }
+}

@@ -1,0 +1,110 @@
+/* styles/modal.css - generic modal styles used by Credits, Contact, Trailer */
+
+/* base modal (hidden by default) */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  font-family: "Mukta", sans-serif;
+}
+
+/* show modal */
+.modal.open { display: block; }
+
+/* overlay */
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(4px);
+}
+
+/* panel */
+.modal-panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92vw, 880px);
+  max-height: 86vh;
+  background: rgba(6,8,12,0.96);
+  border-radius: 12px;
+  padding: 18px;
+  color: var(--text, #EDF1F7);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+/* wider panel variant for trailer */
+.modal-panel--wide { width: min(98vw, 1100px); }
+
+/* header */
+.modal-header {
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.modal-header h2 { margin:0; font-size: 1.15rem; }
+
+/* close */
+.modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+/* body scrollable */
+.modal-body {
+  overflow: auto;
+  padding-right: 6px;
+  padding-bottom: 8px;
+}
+
+/* section titles & list */
+.modal-body h3 { margin-top: 12px; margin-bottom: 8px; color: var(--orange); }
+.modal-body ul { list-style: disc; padding-left: 18px; margin-bottom: 8px; }
+.modal-body li { margin-bottom: 6px; line-height: 1.5; font-size: 0.95rem; }
+
+/* form inside modal */
+.modal-body form label { display:block; margin-bottom: 10px; font-size: 0.95rem; }
+.modal-body input,
+.modal-body textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: var(--text);
+  margin-top: 6px;
+}
+
+/* actions in modal */
+.modal-actions {
+  margin-top: 12px;
+  display:flex;
+  gap: 12px;
+  justify-content:flex-end;
+}
+
+/* trailer wrapper */
+.trailer-wrapper { display:block; }
+.trailer-placeholder { padding: 20px; text-align:center; }
+
+/* footer */
+.modal-footer { margin-top: 12px; font-size: 0.9rem; opacity: 0.9; }
+
+/* mobile tweaks */
+@media (max-width: 480px) {
+  .modal-panel { width: calc(100vw - 28px); padding: 14px; border-radius: 10px; }
+  .modal-panel--wide { width: calc(100vw - 18px); }
+  .modal-body iframe { height: 220px; }
+}

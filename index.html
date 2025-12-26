@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Concriz Games — Zero Quest Adventure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="./assets/faviconcz.ico">
+
+  <!-- main stylesheet (imports modular CSS files) -->
+  <link rel="stylesheet" href="./styles/global.css">
+
+  <!-- corrected Google Fonts link for Lilita One -->
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <div id="background" aria-hidden="true">
+    <video loop autoplay muted playsinline>
+      <source src="./assets/VideobackgroundsiteComp.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div id="app" class="site">
+    <header class="site-header">
+      <div class="header-inner container">
+        
+          <img src="./assets/logo-cap.png" alt="Logo Concriz Games" class="logo">
+        
+
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+        <nav class="navigation" role="navigation" aria-label="Menu principal">
+          
+          <ul>
+            <li><a href="#" id="contact-link" class="navigation__link">Contact</a></li>
+            <!-- data-video-id agora com o ID do YouTube -->
+            <li><a href="#" id="trailer-link" class="navigation__link" data-video-id="E2hgLxfRn9g">Trailer</a></li>
+            <li><a href="#" id="credits-link" class="navigation__link">Credits</a></li>
+          </ul>
+        </nav>
+
+        <div class="navigation__social" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="header-icon" aria-hidden="true"><path fill="#EDF1F7" d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+    </header>
+
+    <main class="container main" role="main">
+      <div class="main__info" data-aos="fade-up" data-aos-duration="800">
+        <img class="hero-icon" src="./assets/ZeroQuest-Icone Redes sociais 800x800 Sfundo.png" alt="Zero Quest Icon">
+
+        <p>
+          <strong>Zero Quest Adventure</strong><br>
+          Entre em um universo cheio de desafios, criaturas misteriosas e lugares incríveis para explorar.
+          Crie seu herói, explore mundos mágicos e enfrente jogadores do mundo todo em partidas divertidas e cheias de aventura.
+        </p>
+
+        <div class="cta-group" data-aos="fade-up" data-aos-delay="300">
+          <a class="cta cta-primary" href="https://www.youtube.com/@ZeroQuestAdventure" target="_blank" rel="noopener noreferrer">Assistir Trailer</a>
+          <a href="https://play.google.com/store/games?device=phone&utm_source=latam_Med" target="_blank" rel="noopener noreferrer">
+          <button class="cta cta-secondary" type="button">Baixar na Playstore</button>
+          </a>
+        </div>
+      </div>
+
+      <img class="main__character" src="./assets/ImageSite_Zero_Girl.png" alt="Personagens Zero Quest" data-aos="fade-up" data-aos-delay="500" data-aos-easing="ease-in-out">
+    </main>
+
+    <!-- fixed social area -->
+    <aside class="social-area" aria-label="Redes sociais">
+      <a class="social-btn instagram" href="https://www.instagram.com/zeroquestadventure?utm_source=qr&igsh=MTNpOWFzamR0a3Z6MQ==/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm5 6.5A4.5 4.5 0 1 1 7.5 13 4.505 4.505 0 0 1 12 8.5zm5.25-.375a1.125 1.125 0 1 1-1.125-1.125A1.125 1.125 0 0 1 17.25 8.125z"/></svg>
+      </a>
+
+      <a class="social-btn youtube" href="https://www.youtube.com/@ZeroQuestAdventure" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 7a3 3 0 0 0-2.114-2.114C18.92 4 12 4 12 4s-6.92 0-8.886.886A3 3 0 0 0 .999 7v10a3 3 0 0 0 2.115 2.114C5.08 20 12 20 12 20s6.92 0 8.886-.886A3 3 0 0 0 23 17V7zM9.75 15V9l5.75 3-5.75 3z"/></svg>
+      </a>
+
+      <a class="social-btn tiktok" href="https://www.tiktok.com/@zero.quest.advent?_r=1&_t=ZS-91Amv0y3CrQ/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg fill="#ffffff" width="800px" height="800px" viewBox="0 0 512 512" id="icons" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+        <g id="SVGRepo_iconCarrier">
+        <path d="M412.19,118.66a109.27,109.27,0,0,1-9.45-5.5,132.87,132.87,0,0,1-24.27-20.62c-18.1-20.71-24.86-41.72-27.35-56.43h.1C349.14,23.9,350,16,350.13,16H267.69V334.78c0,4.28,0,8.51-.18,12.69,0,.52-.05,1-.08,1.56,0,.23,0,.47-.05.71,0,.06,0,.12,0,.18a70,70,0,0,1-35.22,55.56,68.8,68.8,0,0,1-34.11,9c-38.41,0-69.54-31.32-69.54-70s31.13-70,69.54-70a68.9,68.9,0,0,1,21.41,3.39l.1-83.94a153.14,153.14,0,0,0-118,34.52,161.79,161.79,0,0,0-35.3,43.53c-3.48,6-16.61,30.11-18.2,69.24-1,22.21,5.67,45.22,8.85,54.73v.2c2,5.6,9.75,24.71,22.38,40.82A167.53,167.53,0,0,0,115,470.66v-.2l.2.2C155.11,497.78,199.36,496,199.36,496c7.66-.31,33.32,0,62.46-13.81,32.32-15.31,50.72-38.12,50.72-38.12a158.46,158.46,0,0,0,27.64-45.93c7.46-19.61,9.95-43.13,9.95-52.53V176.49c1,.6,14.32,9.41,14.32,9.41s19.19,12.3,49.13,20.31c21.48,5.7,50.42,6.9,50.42,6.9V131.27C453.86,132.37,433.27,129.17,412.19,118.66Z"/>
+        </g>
+        </svg>
+      </a>
+    </aside>
+  </div>
+
+  <!-- ---------- Modals: Credits, Contact, Trailer ---------- -->
+
+  <!-- Generic modal structure: credits -->
+  <div class="modal" id="creditsModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="creditsTitle">
+    <div class="modal-overlay" data-close-modal></div>
+    <aside class="modal-panel">
+      <header class="modal-header">
+        <h2 id="creditsTitle">Credits</h2>
+        <button class="modal-close" data-close-modal aria-label="Fechar créditos">✕</button>
+      </header>
+
+      <div class="modal-body" tabindex="0">
+        <section>
+          <h3>Músicas</h3>
+          <ul>
+            <li><strong>"Lively Meadow Victory"</strong> — Compositor: Matthew Pablo — Licença: CC BY 3.0</li>
+            <li><strong>"Mystic Forest"</strong> — Compositor: João Pereira — Licença: Royalty-Free</li>
+            <li><strong>"Battle Theme"</strong> — Compositor: StudioZero — Licença: CC BY-NC</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Sons e Efeitos</h3>
+          <ul>
+            <li>Footstep SFX — Autor: Max Peres — Licença: Attribution</li>
+            <li>Magic Pop — Autor: Vitor EVPS — Licença: Royalty-Free</li>
+            <li>UI Click — Autor: Vitor EVPS — Licença: CC0</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Imagens e Arte</h3>
+          <ul>
+            <li>Personagens – Artista: Max Peres — Uso autorizado</li>
+            <li>Backgrounds – Artista: Max Peres — Licença: Proprietária</li>
+            <li>Ícones e UI – Designer: Vitor EVPS — Licença: Proprietária</li>
+          </ul>
+        </section>
+
+       <!-- <footer class="modal-footer">
+          <p>Substitua esses itens pelos créditos reais do jogo quando disponível.</p>
+        </footer> -->
+      </div>
+    </aside>
+  </div>
+
+  <!-- contact modal -->
+  <div class="modal" id="contactModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-overlay" data-close-modal></div>
+    <aside class="modal-panel">
+      <header class="modal-header">
+        <h2 id="contactTitle">Contact</h2>
+        <button class="modal-close" data-close-modal aria-label="Fechar contato">✕</button>
+      </header>
+
+      <div class="modal-body">
+        <form action= "https://api.staticforms.dev/submit"
+          method="POST" id="contactForm" >
+          
+          <input type="hidden" name= "apiKey" value= "sf_dg09jlk7njjgg2793c40ffl8" >
+          <label>
+            Nome
+            <input type="text" name="name" placeholder="Seu nome" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="seu@email.com" required>
+          </label>
+          <label>
+            Mensagem
+            <textarea name="message" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+          </label>
+
+          <div class="modal-actions">
+            <button type="submit" class="cta cta-primary">Enviar</button>
+            <button type="button" class="cta cta-secondary" data-close-modal>Cancelar</button>
+          </div>
+          
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  <!-- trailer modal -->
+<div class="modal" id="trailerModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="trailerTitle">
+  <div class="modal-overlay" data-close-modal></div>
+  <aside class="modal-panel modal-panel--wide">
+    <header class="modal-header">
+      <h2 id="trailerTitle">Trailer</h2>
+      <button class="modal-close" data-close-modal aria-label="Fechar trailer">✕</button>
+    </header>
+
+    <div class="modal-body">
+      <!-- If link has data-video-id, JS will set iframe src to embed that ID. If not, shows placeholder text -->
+      <div class="trailer-wrapper" id="trailerWrapper">
+        <div class="trailer-placeholder" id="trailerPlaceholder">
+          <p>O trailer será adicionado em breve. Quando disponível, o vídeo será carregado aqui.</p>
+        </div>
+
+        <div class="trailer-player" style="display:none;">
+          <iframe id="trailerIframe" width="100%" height="400" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src="https://www.youtube.com/embed/E2hgLxfRn9g?si=40GxW1EhQ577kKNN"></iframe>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+
+  <!-- scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <script>
+    // Menu toggle
+    (function () {
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.navigation');
+      if (!toggle || !nav) return;
+
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('active');
+        toggle.classList.toggle('active');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      // Close nav when clicking a link (mobile UX)
+      nav.querySelectorAll('.navigation__link').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('active');
+          toggle.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+
+  <!-- HASH-based modal manager (opens #creditos, #contact, #trailer) -->
+  <script>
+  (function () {
+    // Map hashes to modal and opener IDs
+    const HASH_MAP = {
+      '#creditos': { modalId: 'creditsModal', openerId: 'credits-link' },
+      '#contact':  { modalId: 'contactModal',  openerId: 'contact-link' },
+      '#trailer':  { modalId: 'trailerModal',  openerId: 'trailer-link' }
+    };
+
+    function $(id) { return document.getElementById(id); }
+
+    function extractYouTubeID(input) {
+      if (!input) return '';
+      // if it's already just an ID (no slashes or spaces) return it
+      if (!/[\/\?&=]/.test(input)) return input.trim();
+      try {
+        const u = input.trim();
+        // handle youtu.be short links
+        const byShort = u.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
+        if (byShort && byShort[1]) return byShort[1];
+        // handle full youtube url with v=...
+        const vParam = u.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
+        if (vParam && vParam[1]) return vParam[1];
+        // handle embed url /embed/VIDEO_ID
+        const embed = u.match(/\/embed\/([A-Za-z0-9_-]{6,})/);
+        if (embed && embed[1]) return embed[1];
+        // else no valid id found
+        return '';
+      } catch (e) {
+        return '';
+      }
+    }
+
+    function closeAllModalsUI() {
+      Object.values(HASH_MAP).forEach(cfg => {
+        const m = $(cfg.modalId);
+        if (m) {
+          m.classList.remove('open');
+          m.setAttribute('aria-hidden', 'true');
+        }
+      });
+      document.body.classList.remove('modal-open');
+      // stop trailer video if open
+      const trailer = $('trailerModal');
+      if (trailer) {
+        const iframe = trailer.querySelector('#trailerIframe');
+        if (iframe) iframe.src = '';
+        const player = trailer.querySelector('.trailer-player');
+        const placeholder = trailer.querySelector('.trailer-placeholder');
+        if (player) player.style.display = 'none';
+        if (placeholder) placeholder.style.display = 'block';
+      }
+    }
+
+    function openModalUI(modal) {
+      if (!modal) return;
+      // close others first
+      closeAllModalsUI();
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      // focus first focusable element
+      const first = modal.querySelector('button, [tabindex], input, textarea, a');
+      if (first) first.focus();
+    }
+
+    // Handle hash change: open corresponding modal or close all
+    function handleHashChange() {
+      const h = (location.hash || '').toLowerCase();
+      if (!h || !HASH_MAP[h]) {
+        closeAllModalsUI();
+        return;
+      }
+
+      const cfg = HASH_MAP[h];
+      const modal = $(cfg.modalId);
+      if (!modal) return;
+
+      // special handling for trailer: extract ID from opener's data-video-id
+      if (h === '#trailer') {
+        const opener = $(cfg.openerId);
+        const raw = opener ? opener.getAttribute('data-video-id') : '';
+        const vid = extractYouTubeID(raw);
+        const iframe = modal.querySelector('#trailerIframe');
+        const player = modal.querySelector('.trailer-player');
+        const placeholder = modal.querySelector('.trailer-placeholder');
+        if (vid && iframe) {
+          iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(vid)}?autoplay=1&rel=0`;
+          if (player) player.style.display = 'block';
+          if (placeholder) placeholder.style.display = 'none';
+        } else {
+          // no valid id -> show placeholder
+          if (player) player.style.display = 'none';
+          if (placeholder) placeholder.style.display = 'block';
+        }
+      }
+
+      // open UI
+      openModalUI(modal);
+    }
+
+    // Setup listeners for link openers: clicking sets location.hash
+    Object.keys(HASH_MAP).forEach(hash => {
+      const openerId = HASH_MAP[hash].openerId;
+      const opener = document.getElementById(openerId);
+      if (!opener) return;
+      opener.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        // mark that user clicked (not strictly necessary here, but keeps behavior consistent)
+        window.__openedModalByClick = true;
+        // set hash (creates history entry) -> triggers hashchange -> opens modal
+        location.hash = hash;
+      });
+    });
+
+    // Close handlers: click on overlay or element with data-close-modal or .modal-close
+    document.addEventListener('click', function (e) {
+      const closeEl = e.target.closest('[data-close-modal], .modal-close');
+      if (closeEl) {
+        const modal = e.target.closest('.modal');
+        if (!modal) return;
+        // when closing, if the current hash corresponds to a modal open, we go back in history
+        const currentHash = (location.hash || '').toLowerCase();
+        if (currentHash && HASH_MAP[currentHash] && HASH_MAP[currentHash].modalId === modal.id) {
+          // navigate back to previous history entry (removes the hash)
+          history.back();
+        } else {
+          // otherwise just remove hash quietly
+          history.replaceState(null, document.title, location.pathname + location.search);
+          closeAllModalsUI();
+        }
+      }
+
+      // overlay direct clicks
+      if (e.target.classList && e.target.classList.contains('modal-overlay')) {
+        const modal = e.target.closest('.modal');
+        if (!modal) return;
+        const currentHash = (location.hash || '').toLowerCase();
+        if (currentHash && HASH_MAP[currentHash] && HASH_MAP[currentHash].modalId === modal.id) {
+          history.back();
+        } else {
+          history.replaceState(null, document.title, location.pathname + location.search);
+          closeAllModalsUI();
+        }
+      }
+    }, false);
+
+    // ESC to close
+    window.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape') {
+        const currentHash = (location.hash || '').toLowerCase();
+        if (currentHash && HASH_MAP[currentHash]) {
+          // same behavior as close click: go back if this hash was added to history
+          history.back();
+        } else {
+          // nothing to do
+        }
+      }
+    });
+
+    // On load, process any existing hash
+    window.addEventListener('load', function () {
+      if (location.hash) handleHashChange();
+    });
+
+    // Finally, handle hashchange events
+    window.addEventListener('hashchange', handleHashChange, false);
+
+    // Expose helper functions if needed
+    window.openModalByHash = function(name){
+      if (name === 'credits') location.hash = '#creditos';
+      if (name === 'contact')  location.hash = '#contact';
+      if (name === 'trailer')  location.hash = '#trailer';
+    };
+    window.clearModalHash = function(){
+      history.replaceState(null, document.title, location.pathname + location.search);
+      closeAllModalsUI();
+    };
+  })();
+  </script>
+</body>
+</html>
