@@ -1,5 +1,5 @@
 <h1 align="center">
-  Site do filme Mario Bros
+  Zero Ques Adventure
 </h1>
 
 <p align="center">
@@ -8,7 +8,7 @@
 
 ## 💻 Projeto
 
-Este projeto é um tutorial que ensina a como criar o site do filme **Mario Bros** ao usar _HTML_ e _CSS_.
+Este é o site do zero quest adventure ao usar _HTML_ e _CSS_.
 
 ## 🚀 Tecnologias
 
