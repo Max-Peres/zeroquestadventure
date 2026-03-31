@@ -9,7 +9,7 @@
   <!-- main stylesheet (imports modular CSS files) -->
   <link rel="stylesheet" href="./styles/global.css">
 
-  <!-- corrected Google Fonts link for Lilita One -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -24,18 +24,14 @@
     <header class="site-header">
       <div class="header-inner container">
         
-          <img src="./assets/logo-cap.png" alt="Logo Concriz Games" class="logo">
+        <img src="./assets/logo-cap.png" alt="Logo Concriz Games" class="logo">
         
-
         <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
 
         <nav class="navigation" role="navigation" aria-label="Menu principal">
-          
           <ul>
-            <li><a href="#" id="contact-link" class="navigation__link">Contato</a></li>
-            <!-- data-video-id agora com o ID do YouTube -->
-            <!--<li><a href="#" id="trailer-link" class="navigation__link" data-video-id="husUMNDSxCU">Trailer</a></li> -->
-            <li><a href="#" id="credits-link" class="navigation__link">Creditos</a></li>
+            <li><a href="#contact" id="contact-link" class="navigation__link">Contato</a></li>
+            <li><a href="#creditos" id="credits-link" class="navigation__link">Créditos</a></li>
           </ul>
         </nav>
 
@@ -50,16 +46,13 @@
         <img class="hero-icon" src="./assets/ZeroQuest-Icone Redes sociais 800x800 Sfundo.png" alt="Zero Quest Icon">
 
         <p>
-          <strong>Zero Quest Adventure</strong><br>
+          <strong>Zero Quest: Adventure</strong><br>
           Entre em um universo cheio de desafios, criaturas misteriosas e lugares incríveis para explorar.
           Crie seu herói, explore mundos mágicos e enfrente jogadores do mundo todo em partidas divertidas e cheias de aventura.
         </p>
 
         <div class="cta-group" data-aos="fade-up" data-aos-delay="300">
-          <a class="cta cta-primary" href="https://youtu.be/husUMNDSxCU" target="_blank" rel="noopener noreferrer">Assistir Trailer</a>
-          <!--<a href="https://play.google.com/store/games?device=phone&utm_source=latam_Med" target="_blank" rel="noopener noreferrer">
-          <button class="cta cta-secondary" type="button">Baixar na Playstore</button>
-          </a> -->
+          <a class="cta cta-primary" href="#trailer" id="trailer-link" data-video-id="husUMNDSxCU">Assistir Trailer</a>
         </div>
       </div>
 
@@ -86,19 +79,24 @@
         </svg>
       </a>
     </aside>
+
+    <!-- Rodapé de Termos de Uso usando Modal -->
+    <footer class="footer-terms">
+      <a href="#termos" id="terms-link" class="terms-link">Termos de Uso</a>
+    </footer>
+
   </div>
 
-  <!-- ---------- Modals: Credits, Contact, Trailer ---------- -->
+  <!-- ---------- Modals ---------- -->
 
-  <!-- Generic modal structure: credits -->
+  <!-- Credits Modal -->
   <div class="modal" id="creditsModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="creditsTitle">
     <div class="modal-overlay" data-close-modal></div>
     <aside class="modal-panel">
       <header class="modal-header">
-        <h2 id="creditsTitle">Creditos</h2>
+        <h2 id="creditsTitle">Créditos</h2>
         <button class="modal-close" data-close-modal aria-label="Fechar créditos">✕</button>
       </header>
-
       <div class="modal-body" tabindex="0">
         <section>
           <h3>Músicas</h3>
@@ -108,7 +106,6 @@
             <li><strong>"Battle Theme"</strong> — Compositor: StudioZero — Licença: CC BY-NC</li>
           </ul>
         </section>
-
         <section>
           <h3>Sons e Efeitos</h3>
           <ul>
@@ -117,7 +114,6 @@
             <li>UI Click — Autor: Vitor EVPS — Licença: CC0</li>
           </ul>
         </section>
-
         <section>
           <h3>Imagens e Arte</h3>
           <ul>
@@ -126,15 +122,11 @@
             <li>Ícones e UI – Designer: Vitor EVPS — Licença: Proprietária</li>
           </ul>
         </section>
-
-       <!-- <footer class="modal-footer">
-          <p>Substitua esses itens pelos créditos reais do jogo quando disponível.</p>
-        </footer> -->
       </div>
     </aside>
   </div>
 
-  <!-- contact modal -->
+  <!-- Contact Modal -->
   <div class="modal" id="contactModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
     <div class="modal-overlay" data-close-modal></div>
     <aside class="modal-panel">
@@ -142,59 +134,135 @@
         <h2 id="contactTitle">Contato</h2>
         <button class="modal-close" data-close-modal aria-label="Fechar contato">✕</button>
       </header>
-
       <div class="modal-body">
-        <form action= "https://api.staticforms.dev/submit"
-          method="POST" id="contactForm" >
-          
-          <input type="hidden" name= "apiKey" value= "sf_dg09jlk7njjgg2793c40ffl8" >
-          <label>
-            Nome
-            <input type="text" name="name" placeholder="Seu nome" required>
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="seu@email.com" required>
-          </label>
-          <label>
-            Mensagem
-            <textarea name="message" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
-          </label>
-
+        <form action="https://api.staticforms.dev/submit" method="POST" id="contactForm">
+          <input type="hidden" name="apiKey" value="sf_dg09jlk7njjgg2793c40ffl8">
+          <label>Nome<input type="text" name="name" placeholder="Seu nome" required></label>
+          <label>Email<input type="email" name="email" placeholder="seu@email.com" required></label>
+          <label>Mensagem<textarea name="message" rows="5" placeholder="Escreva sua mensagem..." required></textarea></label>
           <div class="modal-actions">
             <button type="submit" class="cta cta-primary">Enviar</button>
             <button type="button" class="cta cta-secondary" data-close-modal>Cancelar</button>
           </div>
-          
         </form>
       </div>
     </aside>
   </div>
 
-  <!-- trailer modal -->
-<div class="modal" id="trailerModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="trailerTitle">
-  <div class="modal-overlay" data-close-modal></div>
-  <aside class="modal-panel modal-panel--wide">
-    <header class="modal-header">
-      <h2 id="trailerTitle">Trailer</h2>
-      <button class="modal-close" data-close-modal aria-label="Fechar trailer">✕</button>
-    </header>
-
-    <div class="modal-body">
-      <!-- If link has data-video-id, JS will set iframe src to embed that ID. If not, shows placeholder text -->
-      <div class="trailer-wrapper" id="trailerWrapper">
-        <div class="trailer-placeholder" id="trailerPlaceholder">
-          <p>O trailer será adicionado em breve. Quando disponível, o vídeo será carregado aqui.</p>
-        </div>
-
-        <div class="trailer-player" style="display:none;">
-          <iframe id="trailerIframe" width="100%" height="400" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src=""></iframe>
+  <!-- Trailer Modal -->
+  <div class="modal" id="trailerModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="trailerTitle">
+    <div class="modal-overlay" data-close-modal></div>
+    <aside class="modal-panel modal-panel--wide">
+      <header class="modal-header">
+        <h2 id="trailerTitle">Trailer</h2>
+        <button class="modal-close" data-close-modal aria-label="Fechar trailer">✕</button>
+      </header>
+      <div class="modal-body">
+        <div class="trailer-wrapper" id="trailerWrapper">
+          <div class="trailer-placeholder" id="trailerPlaceholder">
+            <p>O trailer será adicionado em breve. Quando disponível, o vídeo será carregado aqui.</p>
+          </div>
+          <div class="trailer-player" style="display:none;">
+            <iframe id="trailerIframe" width="100%" height="400" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src=""></iframe>
+          </div>
         </div>
       </div>
-    </div>
-  </aside>
-</div>
+    </aside>
+  </div>
 
+  <!-- Terms of Use Modal -->
+  <div class="modal" id="termsModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+    <div class="modal-overlay" data-close-modal></div>
+    <aside class="modal-panel">
+      <header class="modal-header">
+        <h2 id="termsTitle">Termos de Uso - Zero Quest: Adventure</h2>
+        <button class="modal-close" data-close-modal aria-label="Fechar termos">✕</button>
+      </header>
+      <div class="modal-body" tabindex="0">
+        <section>
+          <p><i>Última atualização: 01/04/2026</i></p>
+          <p><i>Bem-vindo(a) ao</i> Zero Quest: Adventure!</p>
+          <p>Estes Termos de Uso ("Termos") regulamentam o seu acesso e uso do jogo mobile Zero Quest: Adventure, desenvolvido e operado por Concriz Games ("nós", "nosso"). Ao baixar, instalar ou jogar o Zero Quest: Adventure, você concorda em cumprir estes Termos. Se você não concorda com eles, por favor, não jogue o jogo.</p>
+        </section>
+        <section>
+          <h3>1. Requisitos de Idade</h3>
+          <p>O Zero Quest: Adventure é voltado para o público jovem. Se você tem menos de 18 anos (ou a maioridade legal em seu país), você declara que seus pais ou responsáveis legais leram e concordaram com estes Termos de Uso em seu nome. Nós nos reservamos o direito de solicitar a comprovação do consentimento dos pais a qualquer momento.</p>
+        </section>
+        <section>
+          <h3>2. Contas de Usuário</h3>
+          <p><i>Para aproveitar os recursos multiplayer do jogo, pode ser necessário criar uma conta.</i>
+</p>
+          <ul>
+            <li><b>Segurança:</b> Você é responsável por manter a confidencialidade das suas credenciais de login. Qualquer atividade realizada através da sua conta é de sua responsabilidade.</li>
+            <li><b>Proibição de Venda:</b>Proibição de Venda: Você não pode vender, doar, alugar ou transferir sua conta para terceiros.</li>
+          
+          </ul>
+        </section>
+        <section>
+          <h3>3. Regras de Conduta e Multiplayer</h3>
+          <p><i>O Zero Quest: Adventure é uma aventura colaborativa e competitiva. Para manter uma comunidade segura e divertida para todos, você concorda expressamente em <b>NÃO:</b>
+</i>
+</p>
+          <ul>
+            <li>Usar linguagem ofensiva, discurso de ódio, ameaças, assédio ou qualquer forma de bullying contra outros jogadores.</li>
+            <li>Utilizar cheats, hacks, mods, bots ou qualquer software de terceiros para obter vantagens injustas no jogo.</li>
+            <li>Explorar bugs ou falhas (glitches) do jogo para benefício próprio.</li>
+            <li>Tentar obter senhas, dados pessoais ou informações de outros jogadores.</li>
+            <li>Fazer-se passar por desenvolvedores, moderadores ou funcionários do Zero Quest: Adventure.</li>
+          
+          </ul>
+        </section>
+        <section>
+          <h3>4. Itens Virtuais e Compras no Aplicativo</h3>
+          <p><i>O jogo pode oferecer a compra de moedas virtuais, skins, equipamentos ou outros itens digitais ("Itens Virtuais") usando dinheiro real.</i>O jogo pode oferecer a compra de moedas virtuais, skins, equipamentos ou outros itens digitais ("Itens Virtuais") usando dinheiro real.</p>
+           <ul>
+            <li><b>Sem Valor Real:</b> Os Itens Virtuais não têm valor monetário no mundo real e não podem ser trocados por dinheiro real.</li>
+            <li><b>Reembolsos:</b> Todas as compras de Itens Virtuais são finais e não reembolsáveis, exceto quando exigido por lei ou pelas políticas da Google Play Store.</li>
+            <li><b>Menores de Idade:</b> Se você é menor de idade, deve ter a permissão de quem paga a fatura (cartão de crédito/Google Play) antes de realizar qualquer compra.</li>
+          
+          </ul>
+        </section>
+        <section>
+          <h3>5. Propriedade Intelectual</h3>
+          <p>Todos os direitos, títulos e interesses do Zero Quest: Adventure, incluindo (mas não se limitando a) gráficos, interface, personagens, histórias, trilha sonora e código-fonte, são de propriedade exclusiva de Concriz Games. Você recebe uma licença limitada, não exclusiva e não transferível apenas para jogar o jogo para fins de entretenimento pessoal. É proibido copiar, modificar ou distribuir qualquer parte do jogo sem nossa autorização prévia.</p>
+          <section>
+          <h3>6. Atualizações e Modificações</h3>
+          <p>Nós nos esforçamos para melhorar o Zero Quest: Adventure constantemente. Podemos atualizar, modificar, adicionar ou remover conteúdos, recursos e servidores do jogo a qualquer momento, sem aviso prévio. Também podemos alterar estes Termos de Uso. O uso contínuo do jogo após as alterações significa que você aceita os novos Termos.</p>
+        </section>
+        <section>
+          <h3>7. Limitação de Responsabilidade</h3>
+          <p>O jogo é fornecido "no estado em que se encontra" ("as is"). Não garantimos que o jogo funcionará ininterruptamente, sem atrasos (lag) ou sem erros. Na medida máxima permitida por lei, não nos responsabilizamos por perdas de dados, progresso no jogo, perda de Itens Virtuais ou qualquer dano indireto resultante do uso do jogo.</p>
+        </section>
+        <section>
+          <h3>8. Privacidade</h3>
+          <p>A proteção dos seus dados é muito importante para nós. As informações sobre como coletamos, usamos e protegemos os seus dados (incluindo regras específicas para menores de idade) estão descritas na nossa Política de Privacidade [Inserir Link para a sua Política de Privacidade]. Ao aceitar estes Termos, você também concorda com a nossa Política de Privacidade.</p>
+        </section>
+        <section>
+          <h3>9. Contato</h3>
+          <p><i>Se você tiver dúvidas sobre estes Termos de Uso, encontrar bugs ou precisar reportar o comportamento de um jogador, entre em contato conosco:</p>
+           <ul>
+            <li><b>E-mail:</b>E-mail: zeroquestadventure@gmail.com</li>
+            <li><b>Discord:</b> https://discord.gg/aENCc8X2qg</li>
+          
+          
+          </ul>
+        </section>
+        <section>
+          <h3>10. Publicidade e Anúncios (Ads)
+</h3>
+          <p><i>Para que possamos manter o Zero Quest: Adventure gratuito para jogar e cobrir os custos de desenvolvimento e manutenção dos servidores multiplayer, o jogo exibe anúncios publicitários (ads). Ao jogar, você concorda com o seguinte:</i></p>
+           <ul>
+            <li><b>Redes de Terceiros:</b> Os anúncios são fornecidos por empresas parceiras (redes de publicidade). Nós configuramos essas redes para exibir apenas propagandas adequadas ao nosso público jovem, porém não temos controle total sobre cada vídeo ou imagem exibida.</li>
+            <li><b>Anúncios com Recompensa:</b> O jogo pode oferecer a opção voluntária de assistir a um anúncio em vídeo em troca de uma recompensa dentro do jogo (como itens ou moedas virtuais). O fechamento do vídeo antes do tempo estipulado pode resultar na perda da recompensa.</li>
+            <li><b>Privacidade e Anúncios Personalizados:</b> As redes de publicidade podem utilizar identificadores do seu dispositivo para mostrar anúncios relevantes. No entanto, para jogadores que não atingiram a maioridade legal, nós (e nossos parceiros) limitamos a coleta de dados e desativamos anúncios baseados em comportamento (anúncios personalizados), respeitando leis como a LGPD e COPPA. Para mais detalhes, consulte nossa Política de Privacidade.</li>
+          
+          
+          </ul>
+        </section>
+        </section>
+      </div>
+    </aside>
+  </div>
 
   <!-- scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -226,34 +294,29 @@
     })();
   </script>
 
-  <!-- HASH-based modal manager (opens #creditos, #contact, #trailer) -->
+  <!-- HASH-based modal manager -->
   <script>
   (function () {
-    // Map hashes to modal and opener IDs
     const HASH_MAP = {
       '#creditos': { modalId: 'creditsModal', openerId: 'credits-link' },
       '#contact':  { modalId: 'contactModal',  openerId: 'contact-link' },
-      '#trailer':  { modalId: 'trailerModal',  openerId: 'trailer-link' }
+      '#trailer':  { modalId: 'trailerModal',  openerId: 'trailer-link' },
+      '#termos':   { modalId: 'termsModal',    openerId: 'terms-link' } // Termos adicionado ao mapa
     };
 
     function $(id) { return document.getElementById(id); }
 
     function extractYouTubeID(input) {
       if (!input) return '';
-      // if it's already just an ID (no slashes or spaces) return it
       if (!/[\/\?&=]/.test(input)) return input.trim();
       try {
         const u = input.trim();
-        // handle youtu.be short links
         const byShort = u.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
         if (byShort && byShort[1]) return byShort[1];
-        // handle full youtube url with v=...
         const vParam = u.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
         if (vParam && vParam[1]) return vParam[1];
-        // handle embed url /embed/VIDEO_ID
         const embed = u.match(/\/embed\/([A-Za-z0-9_-]{6,})/);
         if (embed && embed[1]) return embed[1];
-        // else no valid id found
         return '';
       } catch (e) {
         return '';
@@ -269,7 +332,7 @@
         }
       });
       document.body.classList.remove('modal-open');
-      // stop trailer video if open
+      
       const trailer = $('trailerModal');
       if (trailer) {
         const iframe = trailer.querySelector('#trailerIframe');
@@ -283,17 +346,14 @@
 
     function openModalUI(modal) {
       if (!modal) return;
-      // close others first
       closeAllModalsUI();
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('modal-open');
-      // focus first focusable element
       const first = modal.querySelector('button, [tabindex], input, textarea, a');
       if (first) first.focus();
     }
 
-    // Handle hash change: open corresponding modal or close all
     function handleHashChange() {
       const h = (location.hash || '').toLowerCase();
       if (!h || !HASH_MAP[h]) {
@@ -305,62 +365,52 @@
       const modal = $(cfg.modalId);
       if (!modal) return;
 
-      // special handling for trailer: extract ID from opener's data-video-id
       if (h === '#trailer') {
         const opener = $(cfg.openerId);
-        const raw = opener ? opener.getAttribute('data-video-id') : '';
+        const raw = opener ? opener.getAttribute('data-video-id') : 'husUMNDSxCU'; 
         const vid = extractYouTubeID(raw);
         const iframe = modal.querySelector('#trailerIframe');
         const player = modal.querySelector('.trailer-player');
         const placeholder = modal.querySelector('.trailer-placeholder');
+        
         if (vid && iframe) {
-          iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(vid)}?autoplay=1&rel=0`;
+          iframe.src = `https://www.youtube.com/embed/${vid}?autoplay=1`;
           if (player) player.style.display = 'block';
           if (placeholder) placeholder.style.display = 'none';
         } else {
-          // no valid id -> show placeholder
           if (player) player.style.display = 'none';
           if (placeholder) placeholder.style.display = 'block';
         }
       }
 
-      // open UI
       openModalUI(modal);
     }
 
-    // Setup listeners for link openers: clicking sets location.hash
     Object.keys(HASH_MAP).forEach(hash => {
       const openerId = HASH_MAP[hash].openerId;
       const opener = document.getElementById(openerId);
       if (!opener) return;
       opener.addEventListener('click', function (ev) {
         ev.preventDefault();
-        // mark that user clicked (not strictly necessary here, but keeps behavior consistent)
         window.__openedModalByClick = true;
-        // set hash (creates history entry) -> triggers hashchange -> opens modal
         location.hash = hash;
       });
     });
 
-    // Close handlers: click on overlay or element with data-close-modal or .modal-close
     document.addEventListener('click', function (e) {
       const closeEl = e.target.closest('[data-close-modal], .modal-close');
       if (closeEl) {
         const modal = e.target.closest('.modal');
         if (!modal) return;
-        // when closing, if the current hash corresponds to a modal open, we go back in history
         const currentHash = (location.hash || '').toLowerCase();
         if (currentHash && HASH_MAP[currentHash] && HASH_MAP[currentHash].modalId === modal.id) {
-          // navigate back to previous history entry (removes the hash)
           history.back();
         } else {
-          // otherwise just remove hash quietly
           history.replaceState(null, document.title, location.pathname + location.search);
           closeAllModalsUI();
         }
       }
 
-      // overlay direct clicks
       if (e.target.classList && e.target.classList.contains('modal-overlay')) {
         const modal = e.target.closest('.modal');
         if (!modal) return;
@@ -374,32 +424,26 @@
       }
     }, false);
 
-    // ESC to close
     window.addEventListener('keydown', function (ev) {
       if (ev.key === 'Escape') {
         const currentHash = (location.hash || '').toLowerCase();
         if (currentHash && HASH_MAP[currentHash]) {
-          // same behavior as close click: go back if this hash was added to history
           history.back();
-        } else {
-          // nothing to do
         }
       }
     });
 
-    // On load, process any existing hash
     window.addEventListener('load', function () {
       if (location.hash) handleHashChange();
     });
 
-    // Finally, handle hashchange events
     window.addEventListener('hashchange', handleHashChange, false);
 
-    // Expose helper functions if needed
     window.openModalByHash = function(name){
       if (name === 'credits') location.hash = '#creditos';
-      if (name === 'contact')  location.hash = '#contact';
-      if (name === 'trailer')  location.hash = '#trailer';
+      if (name === 'contact') location.hash = '#contact';
+      if (name === 'trailer') location.hash = '#trailer';
+      if (name === 'termos')  location.hash = '#termos';
     };
     window.clearModalHash = function(){
       history.replaceState(null, document.title, location.pathname + location.search);
