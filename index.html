@@ -6,507 +6,273 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/x-icon" href="./assets/faviconcz.ico">
 
-  <!-- main stylesheet (imports modular CSS files) -->
+  <!-- Estilos -->
   <link rel="stylesheet" href="./styles/global.css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  
+  <!-- Fontes e Animações -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+  
+  <!-- Vídeo de Fundo -->
   <div id="background" aria-hidden="true">
     <video loop autoplay muted playsinline>
       <source src="./assets/VideobackgroundsiteComp.mp4" type="video/mp4">
     </video>
+    <div class="bg-overlay"></div>
   </div>
 
   <div id="app" class="site">
-    <header class="site-header">
+    
+    <!-- Cabeçalho Glassmorphism -->
+    <header class="site-header" data-aos="fade-down" data-aos-duration="800">
       <div class="header-inner container">
+        <a href="#" class="brand">
+          <img src="./assets/logo-cap.png" alt="Logo Concriz Games" class="logo">
+        </a>
         
-        <img src="./assets/logo-cap.png" alt="Logo Concriz Games" class="logo">
-        
-        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        </button>
 
-        <nav class="navigation" role="navigation" aria-label="Menu principal">
+        <nav class="navigation">
           <ul>
-            <li><a href="#contact" id="contact-link" class="navigation__link">Contato</a></li>
-            <li><a href="#creditos" id="credits-link" class="navigation__link">Créditos</a></li>
+            <li><a href="#contact" data-modal-target="contactModal" class="navigation__link">Contato</a></li>
+            <li><a href="#creditos" data-modal-target="creditsModal" class="navigation__link">Créditos</a></li>
           </ul>
         </nav>
-
-        <div class="navigation__social" aria-hidden="true">
-          <svg viewBox="0 0 24 24" class="header-icon" aria-hidden="true"><path fill="#EDF1F7" d="M8 5v14l11-7z"/></svg>
-        </div>
       </div>
     </header>
 
+    <!-- Conteúdo Principal -->
     <main class="container main" role="main">
-      <div class="main__info" data-aos="fade-up" data-aos-duration="800">
+      <div class="main__info" data-aos="fade-right" data-aos-duration="1000">
         <img class="hero-icon" src="./assets/ZeroQuest-Icone Redes sociais 800x800 Sfundo.png" alt="Zero Quest Icon">
 
-        <p>
-          <strong>Zero Quest: Adventure</strong><br>
-          Entre em um universo cheio de desafios, criaturas misteriosas e lugares incríveis para explorar.
-          Crie seu herói, explore mundos mágicos e enfrente jogadores do mundo todo em partidas divertidas e cheias de aventura.
+        <p class="hero-description">
+          Entre em um universo cheio de desafios, criaturas misteriosas e lugares incríveis para explorar. Crie seu herói, descubra mundos mágicos e enfrente jogadores do mundo todo em partidas épicas!
         </p>
 
-        <div class="cta-group" data-aos="fade-up" data-aos-delay="300">
-          <a class="cta cta-primary" href="#trailer" id="trailer-link" data-video-id="husUMNDSxCU">Assistir Trailer</a>
+        <div class="cta-group">
+          <!-- BASTA COLOCAR O LINK DO YOUTUBE AQUI -->
+          <button class="cta cta-primary" data-modal-target="trailerModal" data-youtube-link="https://youtu.be/ABz5_HRZNXw?si=dFU3QpIGxFpeKB2L">
+            <svg viewBox="0 0 24 24" class="icon-play"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+            Assistir Trailer
+          </button>
+          
+          <!-- BASTA COLOCAR O LINK DA PLAY STORE AQUI -->
+          <a class="cta cta-secondary" href="COLE_O_LINK_DA_PLAY_STORE_AQUI" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" class="icon-download"><path fill="currentColor" d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+            Baixar Agora
+          </a>
         </div>
       </div>
 
-      <img class="main__character" src="./assets/ImageSite_Zero_Girl.png" alt="Personagens Zero Quest" data-aos="fade-up" data-aos-delay="500" data-aos-easing="ease-in-out">
+      <div class="main__character-wrapper" data-aos="zoom-in-up" data-aos-duration="1200">
+        <img class="main__character" src="./assets/ImageSite_Zero_Girl.png" alt="Personagem Zero Quest">
+      </div>
     </main>
 
-    <!-- fixed social area -->
-    <aside class="social-area" aria-label="Redes sociais">
-      <a class="social-btn instagram" href="https://www.instagram.com/zeroquestadventure?utm_source=qr&igsh=MTNpOWFzamR0a3Z6MQ==/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm5 6.5A4.5 4.5 0 1 1 7.5 13 4.505 4.505 0 0 1 12 8.5zm5.25-.375a1.125 1.125 0 1 1-1.125-1.125A1.125 1.125 0 0 1 17.25 8.125z"/></svg>
+    <!-- Barra Lateral Social (Dock) -->
+    <aside class="social-dock" data-aos="fade-left" data-aos-delay="500">
+      <a class="social-btn instagram" href="https://www.instagram.com/zeroquestadventure" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm5 6.5A4.5 4.5 0 1 1 7.5 13 4.505 4.505 0 0 1 12 8.5zm5.25-.375a1.125 1.125 0 1 1-1.125-1.125A1.125 1.125 0 0 1 17.25 8.125z"/></svg>
       </a>
-
       <a class="social-btn youtube" href="https://www.youtube.com/@ZeroQuestAdventure" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 7a3 3 0 0 0-2.114-2.114C18.92 4 12 4 12 4s-6.92 0-8.886.886A3 3 0 0 0 .999 7v10a3 3 0 0 0 2.115 2.114C5.08 20 12 20 12 20s6.92 0 8.886-.886A3 3 0 0 0 23 17V7zM9.75 15V9l5.75 3-5.75 3z"/></svg>
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M23 7a3 3 0 0 0-2.114-2.114C18.92 4 12 4 12 4s-6.92 0-8.886.886A3 3 0 0 0 .999 7v10a3 3 0 0 0 2.115 2.114C5.08 20 12 20 12 20s6.92 0 8.886-.886A3 3 0 0 0 23 17V7zM9.75 15V9l5.75 3-5.75 3z"/></svg>
       </a>
-
-      <a class="social-btn tiktok" href="https://www.tiktok.com/@zero.quest.advent?_r=1&_t=ZS-91Amv0y3CrQ/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-        <svg fill="#ffffff" width="800px" height="800px" viewBox="0 0 512 512" id="icons" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
-        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-        <g id="SVGRepo_iconCarrier">
-        <path d="M412.19,118.66a109.27,109.27,0,0,1-9.45-5.5,132.87,132.87,0,0,1-24.27-20.62c-18.1-20.71-24.86-41.72-27.35-56.43h.1C349.14,23.9,350,16,350.13,16H267.69V334.78c0,4.28,0,8.51-.18,12.69,0,.52-.05,1-.08,1.56,0,.23,0,.47-.05.71,0,.06,0,.12,0,.18a70,70,0,0,1-35.22,55.56,68.8,68.8,0,0,1-34.11,9c-38.41,0-69.54-31.32-69.54-70s31.13-70,69.54-70a68.9,68.9,0,0,1,21.41,3.39l.1-83.94a153.14,153.14,0,0,0-118,34.52,161.79,161.79,0,0,0-35.3,43.53c-3.48,6-16.61,30.11-18.2,69.24-1,22.21,5.67,45.22,8.85,54.73v.2c2,5.6,9.75,24.71,22.38,40.82A167.53,167.53,0,0,0,115,470.66v-.2l.2.2C155.11,497.78,199.36,496,199.36,496c7.66-.31,33.32,0,62.46-13.81,32.32-15.31,50.72-38.12,50.72-38.12a158.46,158.46,0,0,0,27.64-45.93c7.46-19.61,9.95-43.13,9.95-52.53V176.49c1,.6,14.32,9.41,14.32,9.41s19.19,12.3,49.13,20.31c21.48,5.7,50.42,6.9,50.42,6.9V131.27C453.86,132.37,433.27,129.17,412.19,118.66Z"/>
-        </g>
-        </svg>
+      <a class="social-btn tiktok" href="https://www.tiktok.com/@zero.quest.advent" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg viewBox="0 0 512 512" stroke="currentColor"><path fill="currentColor" d="M412.19,118.66a109.27,109.27,0,0,1-9.45-5.5,132.87,132.87,0,0,1-24.27-20.62c-18.1-20.71-24.86-41.72-27.35-56.43h.1C349.14,23.9,350,16,350.13,16H267.69V334.78c0,4.28,0,8.51-.18,12.69,0,.52-.05,1-.08,1.56,0,.23,0,.47-.05.71,0,.06,0,.12,0,.18a70,70,0,0,1-35.22,55.56,68.8,68.8,0,0,1-34.11,9c-38.41,0-69.54-31.32-69.54-70s31.13-70,69.54-70a68.9,68.9,0,0,1,21.41,3.39l.1-83.94a153.14,153.14,0,0,0-118,34.52,161.79,161.79,0,0,0-35.3,43.53c-3.48,6-16.61,30.11-18.2,69.24-1,22.21,5.67,45.22,8.85,54.73v.2c2,5.6,9.75,24.71,22.38,40.82A167.53,167.53,0,0,0,115,470.66v-.2l.2.2C155.11,497.78,199.36,496,199.36,496c7.66-.31,33.32,0,62.46-13.81,32.32-15.31,50.72-38.12,50.72-38.12a158.46,158.46,0,0,0,27.64-45.93c7.46-19.61,9.95-43.13,9.95-52.53V176.49c1,.6,14.32,9.41,14.32,9.41s19.19,12.3,49.13,20.31c21.48,5.7,50.42,6.9,50.42,6.9V131.27C453.86,132.37,433.27,129.17,412.19,118.66Z"/></svg>
       </a>
     </aside>
 
-    <!-- Rodapé de Termos de Uso usando Modal -->
     <footer class="footer-terms">
-      <a href="#termos" id="terms-link" class="terms-link">Política de Privacidade</a>
+      <a href="#termos" data-modal-target="termsModal" class="terms-link">Política de Privacidade & Termos</a>
     </footer>
-
   </div>
 
-  <!-- ---------- Modals ---------- -->
-
-  <!-- Credits Modal -->
-  <div class="modal" id="creditsModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="creditsTitle">
+  <!-- ================= MODAIS ================= -->
+  
+  <!-- Trailer Modal (YouTube API) -->
+  <div class="modal" id="trailerModal" aria-hidden="true">
     <div class="modal-overlay" data-close-modal></div>
-    <aside class="modal-panel">
+    <div class="modal-panel modal-panel--wide">
       <header class="modal-header">
-        <h2 id="creditsTitle">Créditos</h2>
-        <button class="modal-close" data-close-modal aria-label="Fechar créditos">✕</button>
+        <h2>Trailer Oficial</h2>
+        <button class="modal-close" data-close-modal>✕</button>
       </header>
-      <div class="modal-body" tabindex="0">
+      <div class="modal-body">
+        <div class="video-container" id="youtubeContainer">
+          <!-- O Iframe será injetado aqui dinamicamente pelo JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Créditos Modal -->
+  <div class="modal" id="creditsModal" aria-hidden="true">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-panel">
+      <header class="modal-header">
+        <h2>Créditos</h2>
+        <button class="modal-close" data-close-modal>✕</button>
+      </header>
+      <div class="modal-body">
         <section>
           <h3>Músicas</h3>
           <ul>
-            <li><strong>"Lively Meadow Victory"</strong> — Compositor: Matthew Pablo — Licença: CC BY 3.0</li>
-            <li><strong>"Mystic Forest"</strong> — Compositor: João Pereira — Licença: Royalty-Free</li>
-            <li><strong>"Battle Theme"</strong> — Compositor: StudioZero — Licença: CC BY-NC</li>
+            <li><strong>Lively Meadow Victory</strong> — Matthew Pablo (CC BY 3.0)</li>
+            <li><strong>Mystic Forest</strong> — João Pereira (Royalty-Free)</li>
+            <li><strong>Battle Theme</strong> — StudioZero (CC BY-NC)</li>
           </ul>
         </section>
         <section>
           <h3>Sons e Efeitos</h3>
           <ul>
-            <li>Footstep SFX — Autor: Max Peres — Licença: Attribution</li>
-            <li>Magic Pop — Autor: Vitor EVPS — Licença: Royalty-Free</li>
-            <li>UI Click — Autor: Vitor EVPS — Licença: CC0</li>
+            <li>Footstep SFX — Max Peres (Attribution)</li>
+            <li>Magic Pop — Vitor EVPS (Royalty-Free)</li>
+            <li>UI Click — Vitor EVPS (CC0)</li>
           </ul>
         </section>
         <section>
           <h3>Imagens e Arte</h3>
           <ul>
-            <li>Personagens – Artista: Max Peres — Uso autorizado</li>
-            <li>Backgrounds – Artista: Max Peres — Licença: Proprietária</li>
-            <li>Ícones e UI – Designer: Vitor EVPS — Licença: Proprietária</li>
+            <li>Personagens & BGs — Max Peres</li>
+            <li>Ícones e UI — Vitor EVPS</li>
           </ul>
         </section>
       </div>
-    </aside>
+    </div>
   </div>
 
-  <!-- Contact Modal -->
-  <div class="modal" id="contactModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+  <!-- Contato Modal -->
+  <div class="modal" id="contactModal" aria-hidden="true">
     <div class="modal-overlay" data-close-modal></div>
-    <aside class="modal-panel">
+    <div class="modal-panel">
       <header class="modal-header">
-        <h2 id="contactTitle">Contato</h2>
-        <button class="modal-close" data-close-modal aria-label="Fechar contato">✕</button>
+        <h2>Contato</h2>
+        <button class="modal-close" data-close-modal>✕</button>
       </header>
       <div class="modal-body">
-        <form action="https://api.staticforms.dev/submit" method="POST" id="contactForm">
+        <form action="https://api.staticforms.dev/submit" method="POST" class="modern-form">
           <input type="hidden" name="apiKey" value="sf_dg09jlk7njjgg2793c40ffl8">
-          <label>Nome<input type="text" name="name" placeholder="Seu nome" required></label>
-          <label>Email<input type="email" name="email" placeholder="seu@email.com" required></label>
-          <label>Mensagem<textarea name="message" rows="5" placeholder="Escreva sua mensagem..." required></textarea></label>
+          <div class="input-group">
+            <label>Nome</label>
+            <input type="text" name="name" placeholder="Como devemos te chamar?" required>
+          </div>
+          <div class="input-group">
+            <label>E-mail</label>
+            <input type="email" name="email" placeholder="seu@email.com" required>
+          </div>
+          <div class="input-group">
+            <label>Mensagem</label>
+            <textarea name="message" rows="4" placeholder="Escreva sua mensagem aqui..." required></textarea>
+          </div>
           <div class="modal-actions">
-            <button type="submit" class="cta cta-primary">Enviar</button>
-            <button type="button" class="cta cta-secondary" data-close-modal>Cancelar</button>
+            <button type="submit" class="cta cta-primary">Enviar Mensagem</button>
           </div>
         </form>
       </div>
-    </aside>
+    </div>
   </div>
 
-  <!-- Trailer Modal -->
-  <div class="modal" id="trailerModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="trailerTitle">
+  <!-- Termos Modal (Encurtado aqui para não poluir, você pode colar os textos que enviei antes no lugar dos "..." ) -->
+  <div class="modal" id="termsModal" aria-hidden="true">
     <div class="modal-overlay" data-close-modal></div>
-    <aside class="modal-panel modal-panel--wide">
+    <div class="modal-panel">
       <header class="modal-header">
-        <h2 id="trailerTitle">Trailer</h2>
-        <button class="modal-close" data-close-modal aria-label="Fechar trailer">✕</button>
+        <h2>Privacidade e Termos</h2>
+        <button class="modal-close" data-close-modal>✕</button>
       </header>
       <div class="modal-body">
-        <div class="trailer-wrapper" id="trailerWrapper">
-          <div class="trailer-placeholder" id="trailerPlaceholder">
-            <p>O trailer será adicionado em breve. Quando disponível, o vídeo será carregado aqui.</p>
-          </div>
-          <div class="trailer-player" style="display:none;">
-            <iframe id="trailerIframe" width="100%" height="400" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src=""></iframe>
-          </div>
-        </div>
+         <p><i>Última atualização: 01/04/2026</i></p>
+         <p>Bem-vindo(a) ao <strong>Zero Quest: Adventure!</strong></p>
+         <p>A Concriz Games valoriza sua privacidade. Não coletamos dados pessoais identificáveis nesta fase Beta. Transações são geridas pela Google Play Store e anúncios obedecem políticas restritivas para menores.</p>
+         <hr class="divider">
+         <h3 class="highlight">Termos de Uso</h3>
+         <p>Você concorda em não usar cheats, não ofender outros jogadores e respeitar as diretrizes da comunidade. Compras virtuais não têm valor real e são não-reembolsáveis.</p>
+         <p>Dúvidas? <a href="mailto:zeroquestadventure@gmail.com">zeroquestadventure@gmail.com</a></p>
       </div>
-    </aside>
+    </div>
   </div>
 
-  <!-- Política de Privacidade Modal -->
-  <div class="modal" id="termsModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
-    <div class="modal-overlay" data-close-modal></div>
-    <aside class="modal-panel">
-      <header class="modal-header">
-        <h1 id="termsTitle">Política de Privacidade - Zero Quest: Adventure
-        <button class="modal-close" data-close-modal aria-label="Fechar termos">✕</button>
-      </header>
-      <div class="modal-body" tabindex="0">
-        <section>
-          <br>
-          <p><i>Última atualização: 01/04/2026</i></p>
-          <p><i>Bem-vindo(a) ao</i> Zero Quest: Adventure!</p>
-          <p>A Concriz Games ("nós", "nosso"), operadora do jogo mobile Zero Quest: Adventure, valoriza e respeita a sua privacidade. Esta Política de Privacidade explica como lidamos com as informações quando você utiliza nosso jogo e serviços relacionados.</p>
-        </section>
-        <section>
-          <h3>1. Coleta de Informações</h3>
-          <p><i>Nesta fase de lançamento inicial (Beta / Pré-registro), o Zero Quest: Adventure não coleta, não armazena e não solicita informações pessoais identificáveis (como nome, endereço ou número de telefone) para o funcionamento básico do jogo.</i></p>
-          <ul>
-            <li><b>Dados Técnicos:</b> Podemos coletar dados técnicos anônimos e automáticos, como modelo do dispositivo, versão do sistema operacional e relatórios de erros (crash logs), apenas para fins de otimização e estabilidade técnica do sistema.</li>
-          </ul>
-        </section>
-        <section>
-          <h3>2. Serviços de Terceiros e Publicidade:</h3>
-          <p><i>Nosso jogo utiliza os Serviços do Google Play para garantir a funcionalidade técnica no Android. </i></p>
-          <ul>
-            <li><b> Anúncios:</b> O jogo exibe anúncios através de redes parceiras (como Google AdMob). Estas redes podem utilizar identificadores anônimos do seu dispositivo para fins de limitação de frequência e combate a fraudes.</li>
-            <li><b>Privacidade de Menores:</b>PSeguindo as diretrizes da LGPD e COPPA, limitamos a coleta de dados e não exibimos anúncios personalizados (baseados em comportamento) para usuários que não atingiram a maioridade legal em sua jurisdição.</li>
-          
-          </ul>
-        </section>
-        <section>
-          <h3>3. Compras e Transações Digitais:</h3>
-          <p><i>Todas as transações financeiras realizadas dentro do jogo (como a compra de moedas virtuais ou itens) são processadas exclusivamente pelo sistema de cobrança oficial da Google Play Store. A Concriz Games não tem acesso, não coleta e não armazena os dados do seu cartão de crédito ou informações bancárias.</i></p>
-          </ul>
-        </section>
-        <section>
-          <h3>4. Proteção de Dados de Menores:</h3>
-          <p><i>O Zero Quest: Adventure é direcionado ao público jovem e adulto (maiores de 13 anos). Não coletamos intencionalmente dados pessoais de crianças abaixo desta faixa etária. Caso tomemos conhecimento de que dados de um menor de 13 anos foram coletados sem o devido consentimento parental, tomaremos medidas imediatas para a exclusão permanente de tais informações.</i></p>
-        </section>
-        <section>
-          <h3>5. Seus Direitos (LGPD):</h3>
-          <p><i>Em conformidade com a Lei Geral de Proteção de Dados (LGPD), você possui os seguintes direitos:</i></p>
-          <ul>
-            <li> Confirmar a existência de tratamento de dados;</li>
-            <li>Solicitar o acesso, correção ou exclusão de seus dados;</li>
-            <li>Revogar o consentimento de uso a qualquer momento.</li>
-          </ul>
-          <p>Para exercer qualquer um destes direitos ou tirar dúvidas sobre privacidade, entre em contato através do e-mail oficial: zeroquestadventure@gmail.com.</p>
-        </section>
-        <section>
-          <h3>6. Alterações nesta Política:</h3>
-          <p><i>Reservamo-nos o direito de atualizar esta Política de Privacidade periodicamente para refletir mudanças em nossos serviços ou nas legislações vigentes. Recomendamos que o usuário revise esta página regularmente para manter-se informado.</i></p>
-          <ul>
-            <p>Concriz Games</p>
-            <p>E-mail: zeroquestadventure@gmail.com</p>
-          
-          </ul>
-        </section>
-        <br>
-       <!-- Terms of Use Modal -->
-        <section>
-          <h1>Termos de Uso</h1>
-          <br>
-          <p><i>Bem-vindo(a) ao</i> Zero Quest: Adventure!</p>
-          <p>Estes Termos de Uso ("Termos") regulamentam o seu acesso e uso do jogo mobile Zero Quest: Adventure, desenvolvido e operado por Concriz Games ("nós", "nosso"). Ao baixar, instalar ou jogar o Zero Quest: Adventure, você concorda em cumprir estes Termos. Se você não concorda com eles, por favor, não jogue o jogo.</p>
-        </section>
-        <section>
-          <h3>1. Requisitos de Idade</h3>
-          <p>O Zero Quest: Adventure é voltado para o público jovem. Se você tem menos de 18 anos (ou a maioridade legal em seu país), você declara que seus pais ou responsáveis legais leram e concordaram com estes Termos de Uso em seu nome. Nós nos reservamos o direito de solicitar a comprovação do consentimento dos pais a qualquer momento.</p>
-        </section>
-        <section>
-          <h3>2. Contas de Usuário</h3>
-          <p><i>Para aproveitar os recursos multiplayer do jogo, pode ser necessário criar uma conta.</i>
-</p>
-          <ul>
-            <li><b>Segurança:</b> Você é responsável por manter a confidencialidade das suas credenciais de login. Qualquer atividade realizada através da sua conta é de sua responsabilidade.</li>
-            <li><b>Proibição de Venda:</b>Proibição de Venda: Você não pode vender, doar, alugar ou transferir sua conta para terceiros.</li>
-          
-          </ul>
-        </section>
-        <section>
-          <h3>3. Regras de Conduta e Multiplayer</h3>
-          <p><i>O Zero Quest: Adventure é uma aventura colaborativa e competitiva. Para manter uma comunidade segura e divertida para todos, você concorda expressamente em <b>NÃO:</b>
-</i>
-</p>
-          <ul>
-            <li>Usar linguagem ofensiva, discurso de ódio, ameaças, assédio ou qualquer forma de bullying contra outros jogadores.</li>
-            <li>Utilizar cheats, hacks, mods, bots ou qualquer software de terceiros para obter vantagens injustas no jogo.</li>
-            <li>Explorar bugs ou falhas (glitches) do jogo para benefício próprio.</li>
-            <li>Tentar obter senhas, dados pessoais ou informações de outros jogadores.</li>
-            <li>Fazer-se passar por desenvolvedores, moderadores ou funcionários do Zero Quest: Adventure.</li>
-          
-          </ul>
-        </section>
-        <section>
-          <h3>4. Itens Virtuais e Compras no Aplicativo</h3>
-          <p><i>O jogo pode oferecer a compra de moedas virtuais, skins, equipamentos ou outros itens digitais ("Itens Virtuais") usando dinheiro real.</i>O jogo pode oferecer a compra de moedas virtuais, skins, equipamentos ou outros itens digitais ("Itens Virtuais") usando dinheiro real.</p>
-           <ul>
-            <li><b>Sem Valor Real:</b> Os Itens Virtuais não têm valor monetário no mundo real e não podem ser trocados por dinheiro real.</li>
-            <li><b>Reembolsos:</b> Todas as compras de Itens Virtuais são finais e não reembolsáveis, exceto quando exigido por lei ou pelas políticas da Google Play Store.</li>
-            <li><b>Menores de Idade:</b> Se você é menor de idade, deve ter a permissão de quem paga a fatura (cartão de crédito/Google Play) antes de realizar qualquer compra.</li>
-          
-          </ul>
-        </section>
-        <section>
-          <h3>5. Propriedade Intelectual</h3>
-          <p>Todos os direitos, títulos e interesses do Zero Quest: Adventure, incluindo (mas não se limitando a) gráficos, interface, personagens, histórias, trilha sonora e código-fonte, são de propriedade exclusiva de Concriz Games. Você recebe uma licença limitada, não exclusiva e não transferível apenas para jogar o jogo para fins de entretenimento pessoal. É proibido copiar, modificar ou distribuir qualquer parte do jogo sem nossa autorização prévia.</p>
-          <section>
-          <h3>6. Atualizações e Modificações</h3>
-          <p>Nós nos esforçamos para melhorar o Zero Quest: Adventure constantemente. Podemos atualizar, modificar, adicionar ou remover conteúdos, recursos e servidores do jogo a qualquer momento, sem aviso prévio. Também podemos alterar estes Termos de Uso. O uso contínuo do jogo após as alterações significa que você aceita os novos Termos.</p>
-        </section>
-        <section>
-          <h3>7. Limitação de Responsabilidade</h3>
-          <p>O jogo é fornecido "no estado em que se encontra" ("as is"). Não garantimos que o jogo funcionará ininterruptamente, sem atrasos (lag) ou sem erros. Na medida máxima permitida por lei, não nos responsabilizamos por perdas de dados, progresso no jogo, perda de Itens Virtuais ou qualquer dano indireto resultante do uso do jogo.</p>
-        </section>
-        <section>
-          <h3>8. Privacidade</h3>
-          <p>A proteção dos seus dados é muito importante para nós. As informações sobre como coletamos, usamos e protegemos os seus dados (incluindo regras específicas para menores de idade) estão descritas na nossa Política de Privacidade. Ao aceitar estes Termos, você também concorda com a nossa Política de Privacidade.</p>
-        </section>
-        <section>
-          <h3>9. Contato</h3>
-          <p><i>Se você tiver dúvidas sobre estes Termos de Uso, encontrar bugs ou precisar reportar o comportamento de um jogador, entre em contato conosco:</p>
-           <ul>
-            <li><b>E-mail:</b>E-mail: zeroquestadventure@gmail.com</li>
-            <li><b>Discord:</b> https://discord.gg/aENCc8X2qg</li>
-          
-          
-          </ul>
-        </section>
-        <section>
-          <h3>10. Publicidade e Anúncios (Ads)
-</h3>
-          <p><i>Para que possamos manter o Zero Quest: Adventure gratuito para jogar e cobrir os custos de desenvolvimento e manutenção dos servidores multiplayer, o jogo exibe anúncios publicitários (ads). Ao jogar, você concorda com o seguinte:</i></p>
-           <ul>
-            <li><b>Redes de Terceiros:</b> Os anúncios são fornecidos por empresas parceiras (redes de publicidade). Nós configuramos essas redes para exibir apenas propagandas adequadas ao nosso público jovem, porém não temos controle total sobre cada vídeo ou imagem exibida.</li>
-            <li><b>Anúncios com Recompensa:</b> O jogo pode oferecer a opção voluntária de assistir a um anúncio em vídeo em troca de uma recompensa dentro do jogo (como itens ou moedas virtuais). O fechamento do vídeo antes do tempo estipulado pode resultar na perda da recompensa.</li>
-            <li><b>Privacidade e Anúncios Personalizados:</b> As redes de publicidade podem utilizar identificadores do seu dispositivo para mostrar anúncios relevantes. No entanto, para jogadores que não atingiram a maioridade legal, nós (e nossos parceiros) limitamos a coleta de dados e desativamos anúncios baseados em comportamento (anúncios personalizados), respeitando leis como a LGPD e COPPA. Para mais detalhes, consulte nossa Política de Privacidade.</li>
-          
-          
-          </ul>
-          <br>
-          <p>Concriz Games</p>
-            <p>E-mail: zeroquestadventure@gmail.com</p>
-          
-        </section>
-        </section>
-      </div>
-    </aside>
-  </div>
-
-  <!-- scripts -->
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
-  </script>
+    // Inicializa Animações Iniciais
+    AOS.init({ once: true, offset: 50 });
 
-  <script>
-    // Menu toggle
-    (function () {
-      const toggle = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('.navigation');
-      if (!toggle || !nav) return;
+    // Menu Mobile
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.navigation');
+    
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
 
-      toggle.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('active');
-        toggle.classList.toggle('active');
-        toggle.setAttribute('aria-expanded', String(isOpen));
-      });
+    // --- Sistema de Modal Atualizado ---
+    const modals = document.querySelectorAll('.modal');
+    const modalTriggers = document.querySelectorAll('[data-modal-target]');
+    const closeButtons = document.querySelectorAll('[data-close-modal]');
 
-      // Close nav when clicking a link (mobile UX)
-      nav.querySelectorAll('.navigation__link').forEach(link => {
-        link.addEventListener('click', () => {
-          nav.classList.remove('active');
-          toggle.classList.remove('active');
-          toggle.setAttribute('aria-expanded', 'false');
-        });
-      });
-    })();
-  </script>
-
-  <!-- HASH-based modal manager -->
-  <script>
-  (function () {
-    const HASH_MAP = {
-      '#creditos': { modalId: 'creditsModal', openerId: 'credits-link' },
-      '#contact':  { modalId: 'contactModal',  openerId: 'contact-link' },
-      '#trailer':  { modalId: 'trailerModal',  openerId: 'trailer-link' },
-      '#termos':   { modalId: 'termsModal',    openerId: 'terms-link' } // Termos adicionado ao mapa
-    };
-
-    function $(id) { return document.getElementById(id); }
-
-    function extractYouTubeID(input) {
-      if (!input) return '';
-      if (!/[\/\?&=]/.test(input)) return input.trim();
-      try {
-        const u = input.trim();
-        const byShort = u.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
-        if (byShort && byShort[1]) return byShort[1];
-        const vParam = u.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
-        if (vParam && vParam[1]) return vParam[1];
-        const embed = u.match(/\/embed\/([A-Za-z0-9_-]{6,})/);
-        if (embed && embed[1]) return embed[1];
-        return '';
-      } catch (e) {
-        return '';
-      }
+    // Função inteligente para extrair o ID de QUALQUER link do YouTube
+    function getYouTubeID(url) {
+      const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|\/shorts\/)([^#&?]*).*/;
+      const match = url.match(regExp);
+      return (match && match[2].length === 11) ? match[2] : null;
     }
 
-    function closeAllModalsUI() {
-      Object.values(HASH_MAP).forEach(cfg => {
-        const m = $(cfg.modalId);
-        if (m) {
-          m.classList.remove('open');
-          m.setAttribute('aria-hidden', 'true');
-        }
-      });
-      document.body.classList.remove('modal-open');
+    function openModal(modalId, triggerElement) {
+      const modal = document.getElementById(modalId);
+      if(!modal) return;
       
-      const trailer = $('trailerModal');
-      if (trailer) {
-        const iframe = trailer.querySelector('#trailerIframe');
-        if (iframe) iframe.src = '';
-        const player = trailer.querySelector('.trailer-player');
-        const placeholder = trailer.querySelector('.trailer-placeholder');
-        if (player) player.style.display = 'none';
-        if (placeholder) placeholder.style.display = 'block';
-      }
-    }
-
-    function openModalUI(modal) {
-      if (!modal) return;
-      closeAllModalsUI();
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('modal-open');
-      const first = modal.querySelector('button, [tabindex], input, textarea, a');
-      if (first) first.focus();
-    }
-
-    function handleHashChange() {
-      const h = (location.hash || '').toLowerCase();
-      if (!h || !HASH_MAP[h]) {
-        closeAllModalsUI();
-        return;
-      }
-
-      const cfg = HASH_MAP[h];
-      const modal = $(cfg.modalId);
-      if (!modal) return;
-
-      if (h === '#trailer') {
-        const opener = $(cfg.openerId);
-        const raw = opener ? opener.getAttribute('data-video-id') : 'husUMNDSxCU'; 
-        const vid = extractYouTubeID(raw);
-        const iframe = modal.querySelector('#trailerIframe');
-        const player = modal.querySelector('.trailer-player');
-        const placeholder = modal.querySelector('.trailer-placeholder');
+      modal.classList.add('open');
+      
+      // Lógica do YouTube
+      if(modalId === 'trailerModal' && triggerElement) {
+        const ytLink = triggerElement.getAttribute('data-youtube-link');
+        const videoId = getYouTubeID(ytLink);
+        const container = document.getElementById('youtubeContainer');
         
-        if (vid && iframe) {
-          iframe.src = `https://www.youtube.com/embed/${vid}?autoplay=1`;
-          if (player) player.style.display = 'block';
-          if (placeholder) placeholder.style.display = 'none';
+        if(videoId) {
+          container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
         } else {
-          if (player) player.style.display = 'none';
-          if (placeholder) placeholder.style.display = 'block';
+          container.innerHTML = `<p style="text-align:center; padding: 2rem;">Link de vídeo inválido ou não encontrado.</p>`;
         }
       }
-
-      openModalUI(modal);
     }
 
-    Object.keys(HASH_MAP).forEach(hash => {
-      const openerId = HASH_MAP[hash].openerId;
-      const opener = document.getElementById(openerId);
-      if (!opener) return;
-      opener.addEventListener('click', function (ev) {
-        ev.preventDefault();
-        window.__openedModalByClick = true;
-        location.hash = hash;
+    function closeModal() {
+      document.body.classList.remove('modal-open');
+      modals.forEach(m => m.classList.remove('open'));
+      
+      // Destrói o iframe do YouTube para parar o som imediatamente
+      const ytContainer = document.getElementById('youtubeContainer');
+      if(ytContainer) ytContainer.innerHTML = '';
+    }
+
+    // Eventos de clique para abrir
+    modalTriggers.forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = trigger.getAttribute('data-modal-target');
+        openModal(target, trigger);
       });
     });
 
-    document.addEventListener('click', function (e) {
-      const closeEl = e.target.closest('[data-close-modal], .modal-close');
-      if (closeEl) {
-        const modal = e.target.closest('.modal');
-        if (!modal) return;
-        const currentHash = (location.hash || '').toLowerCase();
-        if (currentHash && HASH_MAP[currentHash] && HASH_MAP[currentHash].modalId === modal.id) {
-          history.back();
-        } else {
-          history.replaceState(null, document.title, location.pathname + location.search);
-          closeAllModalsUI();
-        }
-      }
-
-      if (e.target.classList && e.target.classList.contains('modal-overlay')) {
-        const modal = e.target.closest('.modal');
-        if (!modal) return;
-        const currentHash = (location.hash || '').toLowerCase();
-        if (currentHash && HASH_MAP[currentHash] && HASH_MAP[currentHash].modalId === modal.id) {
-          history.back();
-        } else {
-          history.replaceState(null, document.title, location.pathname + location.search);
-          closeAllModalsUI();
-        }
-      }
-    }, false);
-
-    window.addEventListener('keydown', function (ev) {
-      if (ev.key === 'Escape') {
-        const currentHash = (location.hash || '').toLowerCase();
-        if (currentHash && HASH_MAP[currentHash]) {
-          history.back();
-        }
-      }
+    // Eventos de clique para fechar
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', closeModal);
     });
 
-    window.addEventListener('load', function () {
-      if (location.hash) handleHashChange();
+    // Fechar no ESC
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
     });
-
-    window.addEventListener('hashchange', handleHashChange, false);
-
-    window.openModalByHash = function(name){
-      if (name === 'credits') location.hash = '#creditos';
-      if (name === 'contact') location.hash = '#contact';
-      if (name === 'trailer') location.hash = '#trailer';
-      if (name === 'termos')  location.hash = '#termos';
-    };
-    window.clearModalHash = function(){
-      history.replaceState(null, document.title, location.pathname + location.search);
-      closeAllModalsUI();
-    };
-  })();
   </script>
 </body>
 </html>
