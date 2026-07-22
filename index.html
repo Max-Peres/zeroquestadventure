@@ -3,11 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <title>Concriz Games — Zero Quest Adventure</title>
+  
+  <!-- Previne o Erro 153 do YouTube (Segurança de Incorporação) -->
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/x-icon" href="./assets/faviconcz.ico">
-
-  <!-- Estilos -->
-  <link rel="stylesheet" href="./styles/global.css">
+  
+  <!-- Caminhos corrigidos para o GitHub Pages (sem o ./) -->
+  <link rel="icon" type="image/x-icon" href="assets/faviconcz.ico">
+  <link rel="stylesheet" href="styles/global.css">
   
   <!-- Fontes e Animações -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +24,7 @@
   <!-- Vídeo de Fundo -->
   <div id="background" aria-hidden="true">
     <video loop autoplay muted playsinline>
-      <source src="./assets/VideobackgroundsiteComp.mp4" type="video/mp4">
+      <source src="assets/VideobackgroundsiteComp.mp4" type="video/mp4">
     </video>
     <div class="bg-overlay"></div>
   </div>
@@ -31,7 +35,7 @@
     <header class="site-header" data-aos="fade-down" data-aos-duration="800">
       <div class="header-inner container">
         <a href="#" class="brand">
-          <img src="./assets/logo-cap.png" alt="Logo Concriz Games" class="logo">
+          <img src="assets/logo-cap.png" alt="Logo Concriz Games" class="logo">
         </a>
         
         <button class="menu-toggle" aria-label="Abrir menu">
@@ -50,21 +54,23 @@
     <!-- Conteúdo Principal -->
     <main class="container main" role="main">
       <div class="main__info" data-aos="fade-right" data-aos-duration="1000">
-        <img class="hero-icon" src="./assets/ZeroQuest-Icone Redes sociais 800x800 Sfundo.png" alt="Zero Quest Icon">
+        
+        <!-- O NOME DA IMAGEM ABAIXO FOI ALTERADO. LEMBRE-SE DE RENOMEAR O ARQUIVO NA SUA PASTA "ASSETS" -->
+        <img class="hero-icon" src="assets/icone-zero-quest.png" alt="Zero Quest Icon">
 
         <p class="hero-description">
           Entre em um universo cheio de desafios, criaturas misteriosas e lugares incríveis para explorar. Crie seu herói, descubra mundos mágicos e enfrente jogadores do mundo todo em partidas épicas!
         </p>
 
         <div class="cta-group">
-          <!-- BASTA COLOCAR O LINK DO YOUTUBE AQUI -->
-          <button class="cta cta-primary" data-modal-target="trailerModal" data-youtube-link="https://youtu.be/ABz5_HRZNXw?si=dFU3QpIGxFpeKB2L">
+          <!-- BASTA COLOCAR O LINK DO SEU YOUTUBE AQUI -->
+          <button class="cta cta-primary" data-modal-target="trailerModal" data-youtube-link="https://www.youtube.com/watch?v=husUMNDSxCU">
             <svg viewBox="0 0 24 24" class="icon-play"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
             Assistir Trailer
           </button>
           
-          <!-- BASTA COLOCAR O LINK DA PLAY STORE AQUI -->
-          <a class="cta cta-secondary" href="https://play.google.com/store/apps/details?id=com.concrizgames.zeroquestadventure&hl=pt_BR" target="_blank" rel="noopener noreferrer">
+          <!-- BASTA COLOCAR O LINK DA SUA PLAY STORE AQUI -->
+          <a class="cta cta-secondary" href="COLE_O_LINK_DA_PLAY_STORE_AQUI" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" class="icon-download"><path fill="currentColor" d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
             Baixar Agora
           </a>
@@ -72,7 +78,7 @@
       </div>
 
       <div class="main__character-wrapper" data-aos="zoom-in-up" data-aos-duration="1200">
-        <img class="main__character" src="./assets/ImageSite_Zero_Girl.png" alt="Personagem Zero Quest">
+        <img class="main__character" src="assets/ImageSite_Zero_Girl.png" alt="Personagem Zero Quest">
       </div>
     </main>
 
@@ -179,22 +185,23 @@
     </div>
   </div>
 
-  <!-- Termos Modal (Encurtado aqui para não poluir, você pode colar os textos que enviei antes no lugar dos "..." ) -->
- <!-- Política de Privacidade Modal -->
-  <div class="modal" id="termsModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+  <!-- Termos Modal (COMPLETO) -->
+  <div class="modal" id="termsModal" aria-hidden="true">
     <div class="modal-overlay" data-close-modal></div>
-    <aside class="modal-panel">
+    <div class="modal-panel">
       <header class="modal-header">
-        <h1 id="termsTitle">Política de Privacidade - Zero Quest: Adventure
-        <button class="modal-close" data-close-modal aria-label="Fechar termos">✕</button>
+        <h2>Privacidade e Termos</h2>
+        <button class="modal-close" data-close-modal>✕</button>
       </header>
-      <div class="modal-body" tabindex="0">
+      <div class="modal-body">
+        
+        <!-- Política de Privacidade -->
         <section>
-          <br>
-          <p><i>Última atualização: 22/07/2026</i></p>
-          <p><i>Bem-vindo(a) ao</i> Zero Quest: Adventure!</p>
+          <p><i>Última atualização: 01/04/2026</i></p>
+          <p><i>Bem-vindo(a) ao</i> <strong>Zero Quest: Adventure!</strong></p>
           <p>A Concriz Games ("nós", "nosso"), operadora do jogo mobile Zero Quest: Adventure, valoriza e respeita a sua privacidade. Esta Política de Privacidade explica como lidamos com as informações quando você utiliza nosso jogo e serviços relacionados.</p>
         </section>
+        
         <section>
           <h3>1. Coleta de Informações</h3>
           <p><i>Nesta fase de lançamento inicial (Beta / Pré-registro), o Zero Quest: Adventure não coleta, não armazena e não solicita informações pessoais identificáveis (como nome, endereço ou número de telefone) para o funcionamento básico do jogo.</i></p>
@@ -202,135 +209,135 @@
             <li><b>Dados Técnicos:</b> Podemos coletar dados técnicos anônimos e automáticos, como modelo do dispositivo, versão do sistema operacional e relatórios de erros (crash logs), apenas para fins de otimização e estabilidade técnica do sistema.</li>
           </ul>
         </section>
+        
         <section>
-          <h3>2. Serviços de Terceiros e Publicidade:</h3>
-          <p><i>Nosso jogo utiliza os Serviços do Google Play para garantir a funcionalidade técnica no Android. </i></p>
+          <h3>2. Serviços de Terceiros e Publicidade</h3>
+          <p><i>Nosso jogo utiliza os Serviços do Google Play para garantir a funcionalidade técnica no Android.</i></p>
           <ul>
-            <li><b> Anúncios:</b> O jogo exibe anúncios através de redes parceiras (como Google AdMob). Estas redes podem utilizar identificadores anônimos do seu dispositivo para fins de limitação de frequência e combate a fraudes.</li>
-            <li><b>Privacidade de Menores:</b>PSeguindo as diretrizes da LGPD e COPPA, limitamos a coleta de dados e não exibimos anúncios personalizados (baseados em comportamento) para usuários que não atingiram a maioridade legal em sua jurisdição.</li>
-          
+            <li><b>Anúncios:</b> O jogo exibe anúncios através de redes parceiras (como Google AdMob). Estas redes podem utilizar identificadores anônimos do seu dispositivo para fins de limitação de frequência e combate a fraudes.</li>
+            <li><b>Privacidade de Menores:</b> Seguindo as diretrizes da LGPD e COPPA, limitamos a coleta de dados e não exibimos anúncios personalizados (baseados em comportamento) para usuários que não atingiram a maioridade legal em sua jurisdição.</li>
           </ul>
         </section>
+        
         <section>
-          <h3>3. Compras e Transações Digitais:</h3>
+          <h3>3. Compras e Transações Digitais</h3>
           <p><i>Todas as transações financeiras realizadas dentro do jogo (como a compra de moedas virtuais ou itens) são processadas exclusivamente pelo sistema de cobrança oficial da Google Play Store. A Concriz Games não tem acesso, não coleta e não armazena os dados do seu cartão de crédito ou informações bancárias.</i></p>
-          </ul>
         </section>
+        
         <section>
-          <h3>4. Proteção de Dados de Menores:</h3>
-          <p><i>O Zero Quest: Adventure é direcionado ao público jovem e adulto (maiores de 13 anos). Não coletamos intencionalmente dados pessoais de crianças abaixo desta faixa etária. Caso tomemos conhecimento de que dados de um menor de 13 anos foram coletados sem o devido consentimento parental, tomaremos medidas imediatas para a exclusão permanente de tais informações.</i></p>
+          <h3>4. Proteção de Dados de Menores</h3>
+          <p><i>O Zero Quest: Adventure é direcionado ao público jovem e adulto. Não coletamos intencionalmente dados pessoais de crianças menores de 13 anos. Caso tomemos conhecimento de que dados de um menor foram coletados sem o devido consentimento parental, tomaremos medidas imediatas para a exclusão permanente de tais informações.</i></p>
         </section>
+        
         <section>
-          <h3>5. Seus Direitos (LGPD):</h3>
+          <h3>5. Seus Direitos (LGPD)</h3>
           <p><i>Em conformidade com a Lei Geral de Proteção de Dados (LGPD), você possui os seguintes direitos:</i></p>
           <ul>
-            <li> Confirmar a existência de tratamento de dados;</li>
+            <li>Confirmar a existência de tratamento de dados;</li>
             <li>Solicitar o acesso, correção ou exclusão de seus dados;</li>
             <li>Revogar o consentimento de uso a qualquer momento.</li>
           </ul>
           <p>Para exercer qualquer um destes direitos ou tirar dúvidas sobre privacidade, entre em contato através do e-mail oficial: zeroquestadventure@gmail.com.</p>
         </section>
+        
         <section>
-          <h3>6. Alterações nesta Política:</h3>
+          <h3>6. Alterações nesta Política</h3>
           <p><i>Reservamo-nos o direito de atualizar esta Política de Privacidade periodicamente para refletir mudanças em nossos serviços ou nas legislações vigentes. Recomendamos que o usuário revise esta página regularmente para manter-se informado.</i></p>
-          <ul>
-            <p>Concriz Games</p>
+          <div style="margin-top:10px;">
+            <p><strong>Concriz Games</strong></p>
             <p>E-mail: zeroquestadventure@gmail.com</p>
-          
-          </ul>
+          </div>
         </section>
-        <br>
-       <!-- Terms of Use Modal -->
+        
+        <hr class="divider">
+
+        <!-- Termos de Uso -->
         <section>
-          <h1>Termos de Uso</h1>
-          <br>
-          <p><i>Bem-vindo(a) ao</i> Zero Quest: Adventure!</p>
+          <h2 class="highlight">Termos de Uso</h2>
           <p>Estes Termos de Uso ("Termos") regulamentam o seu acesso e uso do jogo mobile Zero Quest: Adventure, desenvolvido e operado por Concriz Games ("nós", "nosso"). Ao baixar, instalar ou jogar o Zero Quest: Adventure, você concorda em cumprir estes Termos. Se você não concorda com eles, por favor, não jogue o jogo.</p>
         </section>
+        
         <section>
           <h3>1. Requisitos de Idade</h3>
           <p>O Zero Quest: Adventure é voltado para o público jovem. Se você tem menos de 18 anos (ou a maioridade legal em seu país), você declara que seus pais ou responsáveis legais leram e concordaram com estes Termos de Uso em seu nome. Nós nos reservamos o direito de solicitar a comprovação do consentimento dos pais a qualquer momento.</p>
         </section>
+        
         <section>
           <h3>2. Contas de Usuário</h3>
-          <p><i>Para aproveitar os recursos multiplayer do jogo, pode ser necessário criar uma conta.</i>
-</p>
+          <p><i>Para aproveitar os recursos multiplayer do jogo, pode ser necessário criar uma conta.</i></p>
           <ul>
             <li><b>Segurança:</b> Você é responsável por manter a confidencialidade das suas credenciais de login. Qualquer atividade realizada através da sua conta é de sua responsabilidade.</li>
-            <li><b>Proibição de Venda:</b>Proibição de Venda: Você não pode vender, doar, alugar ou transferir sua conta para terceiros.</li>
-          
+            <li><b>Proibição de Venda:</b> Você não pode vender, doar, alugar ou transferir sua conta para terceiros.</li>
           </ul>
         </section>
+        
         <section>
           <h3>3. Regras de Conduta e Multiplayer</h3>
-          <p><i>O Zero Quest: Adventure é uma aventura colaborativa e competitiva. Para manter uma comunidade segura e divertida para todos, você concorda expressamente em <b>NÃO:</b>
-</i>
-</p>
+          <p><i>O Zero Quest: Adventure é uma aventura colaborativa e competitiva. Para manter uma comunidade segura e divertida para todos, você concorda expressamente em <b>NÃO:</b></i></p>
           <ul>
             <li>Usar linguagem ofensiva, discurso de ódio, ameaças, assédio ou qualquer forma de bullying contra outros jogadores.</li>
             <li>Utilizar cheats, hacks, mods, bots ou qualquer software de terceiros para obter vantagens injustas no jogo.</li>
             <li>Explorar bugs ou falhas (glitches) do jogo para benefício próprio.</li>
             <li>Tentar obter senhas, dados pessoais ou informações de outros jogadores.</li>
             <li>Fazer-se passar por desenvolvedores, moderadores ou funcionários do Zero Quest: Adventure.</li>
-          
           </ul>
         </section>
+        
         <section>
           <h3>4. Itens Virtuais e Compras no Aplicativo</h3>
-          <p><i>O jogo pode oferecer a compra de moedas virtuais, skins, equipamentos ou outros itens digitais ("Itens Virtuais") usando dinheiro real.</i>O jogo pode oferecer a compra de moedas virtuais, skins, equipamentos ou outros itens digitais ("Itens Virtuais") usando dinheiro real.</p>
-           <ul>
+          <p><i>O jogo pode oferecer a compra de moedas virtuais, skins, equipamentos ou outros itens digitais ("Itens Virtuais") usando dinheiro real.</i></p>
+          <ul>
             <li><b>Sem Valor Real:</b> Os Itens Virtuais não têm valor monetário no mundo real e não podem ser trocados por dinheiro real.</li>
             <li><b>Reembolsos:</b> Todas as compras de Itens Virtuais são finais e não reembolsáveis, exceto quando exigido por lei ou pelas políticas da Google Play Store.</li>
             <li><b>Menores de Idade:</b> Se você é menor de idade, deve ter a permissão de quem paga a fatura (cartão de crédito/Google Play) antes de realizar qualquer compra.</li>
-          
           </ul>
         </section>
+        
         <section>
           <h3>5. Propriedade Intelectual</h3>
           <p>Todos os direitos, títulos e interesses do Zero Quest: Adventure, incluindo (mas não se limitando a) gráficos, interface, personagens, histórias, trilha sonora e código-fonte, são de propriedade exclusiva de Concriz Games. Você recebe uma licença limitada, não exclusiva e não transferível apenas para jogar o jogo para fins de entretenimento pessoal. É proibido copiar, modificar ou distribuir qualquer parte do jogo sem nossa autorização prévia.</p>
-          <section>
+        </section>
+
+        <section>
           <h3>6. Atualizações e Modificações</h3>
           <p>Nós nos esforçamos para melhorar o Zero Quest: Adventure constantemente. Podemos atualizar, modificar, adicionar ou remover conteúdos, recursos e servidores do jogo a qualquer momento, sem aviso prévio. Também podemos alterar estes Termos de Uso. O uso contínuo do jogo após as alterações significa que você aceita os novos Termos.</p>
         </section>
+        
         <section>
           <h3>7. Limitação de Responsabilidade</h3>
           <p>O jogo é fornecido "no estado em que se encontra" ("as is"). Não garantimos que o jogo funcionará ininterruptamente, sem atrasos (lag) ou sem erros. Na medida máxima permitida por lei, não nos responsabilizamos por perdas de dados, progresso no jogo, perda de Itens Virtuais ou qualquer dano indireto resultante do uso do jogo.</p>
         </section>
+        
         <section>
           <h3>8. Privacidade</h3>
-          <p>A proteção dos seus dados é muito importante para nós. As informações sobre como coletamos, usamos e protegemos os seus dados (incluindo regras específicas para menores de idade) estão descritas na nossa Política de Privacidade. Ao aceitar estes Termos, você também concorda com a nossa Política de Privacidade.</p>
+          <p>A proteção dos seus dados é muito importante para nós. As informações sobre como coletamos, usamos e protegemos os seus dados estão descritas na nossa Política de Privacidade. Ao aceitar estes Termos, você também concorda com a nossa Política de Privacidade.</p>
         </section>
+        
         <section>
           <h3>9. Contato</h3>
-          <p><i>Se você tiver dúvidas sobre estes Termos de Uso, encontrar bugs ou precisar reportar o comportamento de um jogador, entre em contato conosco:</p>
-           <ul>
-            <li><b>E-mail:</b>E-mail: zeroquestadventure@gmail.com</li>
-            <li><b>Discord:</b> https://discord.gg/aENCc8X2qg</li>
-          
-          
+          <p><i>Se você tiver dúvidas sobre estes Termos de Uso, encontrar bugs ou precisar reportar o comportamento de um jogador, entre em contato conosco:</i></p>
+          <ul>
+            <li><b>E-mail:</b> zeroquestadventure@gmail.com</li>
+            <li><b>Discord:</b> <a href="https://discord.gg/aENCc8X2qg" target="_blank" style="color:var(--blue)">https://discord.gg/aENCc8X2qg</a></li>
           </ul>
         </section>
+        
         <section>
-          <h3>10. Publicidade e Anúncios (Ads)
-</h3>
+          <h3>10. Publicidade e Anúncios (Ads)</h3>
           <p><i>Para que possamos manter o Zero Quest: Adventure gratuito para jogar e cobrir os custos de desenvolvimento e manutenção dos servidores multiplayer, o jogo exibe anúncios publicitários (ads). Ao jogar, você concorda com o seguinte:</i></p>
-           <ul>
-            <li><b>Redes de Terceiros:</b> Os anúncios são fornecidos por empresas parceiras (redes de publicidade). Nós configuramos essas redes para exibir apenas propagandas adequadas ao nosso público jovem, porém não temos controle total sobre cada vídeo ou imagem exibida.</li>
-            <li><b>Anúncios com Recompensa:</b> O jogo pode oferecer a opção voluntária de assistir a um anúncio em vídeo em troca de uma recompensa dentro do jogo (como itens ou moedas virtuais). O fechamento do vídeo antes do tempo estipulado pode resultar na perda da recompensa.</li>
-            <li><b>Privacidade e Anúncios Personalizados:</b> As redes de publicidade podem utilizar identificadores do seu dispositivo para mostrar anúncios relevantes. No entanto, para jogadores que não atingiram a maioridade legal, nós (e nossos parceiros) limitamos a coleta de dados e desativamos anúncios baseados em comportamento (anúncios personalizados), respeitando leis como a LGPD e COPPA. Para mais detalhes, consulte nossa Política de Privacidade.</li>
-          
-          
+          <ul>
+            <li><b>Redes de Terceiros:</b> Os anúncios são fornecidos por empresas parceiras. Nós as configuramos para exibir apenas propagandas adequadas ao nosso público jovem, porém não temos controle total sobre cada vídeo ou imagem exibida.</li>
+            <li><b>Anúncios com Recompensa:</b> O jogo pode oferecer a opção voluntária de assistir a um anúncio em vídeo em troca de uma recompensa dentro do jogo. O fechamento do vídeo antes do tempo estipulado pode resultar na perda da recompensa.</li>
+            <li><b>Privacidade e Anúncios Personalizados:</b> As redes de publicidade podem utilizar identificadores do seu dispositivo para mostrar anúncios relevantes. No entanto, para jogadores menores de idade, nós (e nossos parceiros) limitamos a coleta de dados e desativamos anúncios baseados em comportamento, respeitando leis como a LGPD e COPPA.</li>
           </ul>
-          <br>
-          <p>Concriz Games</p>
+          <div style="margin-top:16px;">
+            <p><strong>Concriz Games</strong></p>
             <p>E-mail: zeroquestadventure@gmail.com</p>
-          
-        </section>
+          </div>
         </section>
       </div>
-    </aside>
+    </div>
   </div>
-
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -346,12 +353,12 @@
       nav.classList.toggle('active');
     });
 
-    // --- Sistema de Modal Atualizado ---
+    // --- Sistema de Modal ---
     const modals = document.querySelectorAll('.modal');
     const modalTriggers = document.querySelectorAll('[data-modal-target]');
     const closeButtons = document.querySelectorAll('[data-close-modal]');
 
-    // Função inteligente para extrair o ID de QUALQUER link do YouTube
+    // Função para extrair o ID de QUALQUER link do YouTube
     function getYouTubeID(url) {
       const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|\/shorts\/)([^#&?]*).*/;
       const match = url.match(regExp);
@@ -365,7 +372,7 @@
       document.body.classList.add('modal-open');
       modal.classList.add('open');
       
-      // Lógica do YouTube
+      // Lógica do YouTube Automático
       if(modalId === 'trailerModal' && triggerElement) {
         const ytLink = triggerElement.getAttribute('data-youtube-link');
         const videoId = getYouTubeID(ytLink);
@@ -402,7 +409,7 @@
       btn.addEventListener('click', closeModal);
     });
 
-    // Fechar no ESC
+    // Fechar no ESC do teclado
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeModal();
     });
