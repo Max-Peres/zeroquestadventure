@@ -127,6 +127,7 @@ body.modal-open { overflow: hidden; }
 .social-btn.instagram:hover { background: #E1306C; transform: scale(1.15); box-shadow: 0 0 15px rgba(225,48,108,0.5); }
 .social-btn.youtube:hover { background: #FF0000; transform: scale(1.15); box-shadow: 0 0 15px rgba(255,0,0,0.5); }
 .social-btn.tiktok:hover { background: #00f2fe; color: #000; transform: scale(1.15); box-shadow: 0 0 15px rgba(0,242,254,0.5); }
+.social-btn.discord:hover { background: #5865F2; transform: scale(1.15); box-shadow: 0 0 15px rgba(88,101,242,0.5); }
 
 @media (max-width: 768px) {
   .social-dock {
